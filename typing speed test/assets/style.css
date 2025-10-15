@@ -1,0 +1,173 @@
+/* --- CSS Styles: Enhanced UI and Responsiveness --- */
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --background-light: #f4f7f6;
+    --card-background: #fff;
+    --text-area-bg: #e9ecef;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background-light);
+    transition: background-color 0.3s;
+}
+
+.container {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 95%;
+    max-width: 850px;
+    text-align: center;
+}
+
+/* Responsive Grid for Results */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: var(--text-area-bg);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stat-card span {
+    display: block;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.stat-card:nth-child(2) span { color: var(--success-color); }
+.stat-card:nth-child(3) span { color: var(--error-color); }
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.timer {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding: 5px 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Difficulty Selector */
+.difficulty-selector {
+    margin-bottom: 20px;
+}
+.difficulty-selector label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.difficulty-selector select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.text-area {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    min-height: 120px;
+    line-height: 1.8;
+    font-size: 1.3em;
+    background-color: var(--text-area-bg);
+    border-radius: 8px;
+    user-select: none;
+    transition: border 0.3s;
+}
+
+/* Real-Time Feedback Styling */
+.correct { color: var(--success-color); }
+.incorrect { background-color: #fdd; color: var(--error-color); }
+
+.cursor {
+    border-right: 2px solid #333;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { border-right-color: transparent }
+    50% { border-right-color: #333 }
+}
+
+#input-area {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.3em;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#input-area:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+#input-area:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn.start {
+    background-color: var(--success-color);
+    color: white;
+    font-weight: bold;
+}
+
+.btn.start:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.results-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    text-align: left;
+    background-color: #f0f8ff;
+}
+
+.results-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
