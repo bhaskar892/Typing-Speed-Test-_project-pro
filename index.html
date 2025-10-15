@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test Pro</title>
+
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="assets\style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Typing Speed Test ⌨️</h1>
+
+        <div class="difficulty-selector">
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy (Short)</option>
+                <option value="medium" selected>Medium (Standard)</option>
+                <option value="hard">Hard (Long)</option>
+            </select>
+        </div>
+        
+        <div id="timer-display" class="timer">Time Remaining: <span>60</span>s</div>
+        
+        <div id="text-display" class="text-area">
+            Click "Start Test" to load a paragraph.
+        </div>
+        
+        <textarea 
+            id="input-area" 
+            placeholder="Start typing here when the test begins..." 
+            rows="5" 
+            autofocus 
+            disabled
+        ></textarea>
+        
+        <button id="start-button" class="btn start">Start Test</button>
+        
+        <div id="results-section" class="results-section hidden">
+            <h2>Test Results</h2>
+            <div class="results-grid">
+                <div class="stat-card">WPM: <span id="wpm-display">0</span></div>
+                <div class="stat-card">Accuracy: <span id="accuracy-display">0%</span></div>
+                <div class="stat-card">Errors: <span id="errors-display">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link external JavaScript -->
+    <script src="assets\script.js"></script>
+</body>
+</html>
